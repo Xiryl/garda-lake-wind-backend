@@ -1,0 +1,9 @@
+{
+    "URL_DATA_NAVENE": "https://www.meteoproject.it/ftp/stazioni/malcesine/dati.php",
+    "URL_DATA_LIMONE": "http://www.centrometeolombardo.com/Moduli/stazioni.php?limone_garda",
+    "URL_DATA_TORBOLE": "http://www.meteosystem.com/stazioni/garda/attualet.php",
+    "URL_DATA_CVT": "https://www.meteosystem.com/wlip/torbole/tabella2.php",
+    "URL_DATA_RDG_VARONE": "http://www.garda-meteo.com/matteo/dati/varone/websitedata.json?_=1655920083420",
+    "URL_DATA_CAMPIONE": "https://www.meteopassione.com/stazioni/campione",
+    "URL_DATA_TORRI": "http://www.meteotulles.com/meteo/dati%20meteo%20Torri%20del%20Benaco.asp"
+}

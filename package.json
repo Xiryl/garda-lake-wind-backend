@@ -1,0 +1,31 @@
+{
+  "name": "garda-lake-wind-backend",
+  "version": "1.0.0",
+  "description": "Garda Lake wind backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiryl/garda-lake-wind-backend.git"
+  },
+  "author": "Chiarani Fabio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xiryl/garda-lake-wind-backend/issues"
+  },
+  "homepage": "https://github.com/Xiryl/garda-lake-wind-backend#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
+  }
+}

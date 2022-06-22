@@ -18,7 +18,11 @@
   "homepage": "https://github.com/Xiryl/garda-lake-wind-backend#readme",
   "dependencies": {
     "axios": "^0.27.2",
-    "cheerio": "^1.0.0-rc.11"
+    "cheerio": "^1.0.0-rc.11",
+    "dotenv": "^16.0.1",
+    "fastify": "^3.9.1",
+    "fastify-swagger": "^5.2.0",
+    "winston": "^3.7.2"
   },
   "devDependencies": {
     "eslint": "^7.15.0",

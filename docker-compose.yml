@@ -1,8 +1,13 @@
-version: "3"
+version: '3'
 
 services:
-    api:
-        container_name: "garda-lake-wind-backend"
-        build:
-            context: "."
-            dockerfile: "Dockerfile"
+  api:
+    container_name: 'garda-lake-wind-restapi-server'
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    volumes:
+      - ./log:/app/log
+    ports:
+      - 3000:3000
+    restart: 'no'

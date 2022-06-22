@@ -1,20 +1,15 @@
-FROM node:12.13.0-alpine
+FROM node:16-alpine
 
+# install node dependencies
 WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN rm -rf node_modules && npm cache clean --force && npm install --production
 
-# Install python/pip
-# ENV PYTHONUNBUFFERED=1
-# RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-# RUN python3 -m ensurepip
-# RUN pip3 install --no-cache --upgrade pip setuptools
+# copy app source to image _after_ npm install so that
+# application code changes don't bust the docker cache of npm install step
+COPY . /app
 
-#  RUN apk add --update install -y build-essential
+# expose 3000 server port
+EXPOSE 3000
 
-COPY package.json .
-RUN npm install --production
-COPY . .
-
-# Uncomment the line below iff you are not using "host" network mode
-# EXPOSE 3000
-
-CMD ["node", "/app/bot.js"]
+CMD [ "npm", "run", "start" ]

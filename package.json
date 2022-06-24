@@ -21,6 +21,7 @@
     "cheerio": "^1.0.0-rc.11",
     "dotenv": "^16.0.1",
     "fastify": "^3.9.1",
+    "fastify-cors": "^6.1.0",
     "fastify-swagger": "^5.2.0",
     "winston": "^3.7.2"
   },

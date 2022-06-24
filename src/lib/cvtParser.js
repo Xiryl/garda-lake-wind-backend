@@ -21,7 +21,6 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
     if (res.data) {
       const $ = cheerio.load(res.data);
       const allP = $('p');
-      console.log($(allP[10]).text());
       jsonData.temperature.current = $(allP[1]).text().split(':')[1];
       jsonData.temperature.min = $(allP[5]).text().split(':')[1];
       jsonData.temperature.min_hour = '';
@@ -64,10 +63,10 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
       jsonData.ur_internal.max = '';
       jsonData.ur_internal.max_hour = '';
 
-      jsonData.wind.speed = $(allP[8]).text().split(':')[1];
+      jsonData.wind.speed = `${Number(Number($(allP[8]).text().split(':')[1].split(' ')[0]) * Number(0.514444)).toFixed(1)}`;
       jsonData.wind.direction = $(allP[10]).text().split('from')[1];
-      jsonData.wind.avg10minutes = $(allP[10]).text().split('from')[0].split(':')[1];
-      jsonData.wind.raff = $(allP[11]).text().split(':')[1];
+      jsonData.wind.avg10minutes = `${Number(Number($(allP[10]).text().split(':')[1].split(' ')[1]) * Number(0.514444)).toFixed(1)}`;
+      jsonData.wind.raff = `${Number(Number($(allP[11]).text().split(':')[1].split(' ')[0]) * Number(0.514444)).toFixed(1)}`;
       jsonData.wind.raff_hour = $(allP[13]).text().split(':')[1];
 
       jsonData.rain.intensity_day = '';

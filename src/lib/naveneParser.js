@@ -64,10 +64,10 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
       jsonData.ur_internal.max = $(listTd[90]).text();
       jsonData.ur_internal.max_hour = $(listTd[91]).text();
 
-      jsonData.wind.speed = $(listTd[105]).text();
-      jsonData.wind.direction = $(listTd[112]).text();
-      jsonData.wind.avg10minutes = $(listTd[106]).text();
-      jsonData.wind.raff = $(listTd[108]).text();
+      jsonData.wind.speed = $(listTd[105]).text().split(' ')[0];
+      jsonData.wind.direction = $(listTd[112]).text().split(' ')[1];
+      jsonData.wind.avg10minutes = $(listTd[106]).text().split(' ')[0];
+      jsonData.wind.raff = $(listTd[108]).text().split(' ')[0];
       jsonData.wind.raff_hour = $(listTd[109]).text();
 
       jsonData.rain.intensity_day = $(listTd[129]).text();
@@ -80,7 +80,6 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
 
 const elaborate = async () => {
   const jsonData = await getDataFromUrl(urls.URL_DATA_NAVENE);
-  console.log(jsonData);
   return jsonData;
 };
 

@@ -54,8 +54,8 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
 
       jsonData.wind.speed = '';
       jsonData.wind.direction = '';
-      jsonData.wind.avg10minutes = $(listTd[77]).text();
-      jsonData.wind.raff = $(listTd[54]).text();
+      jsonData.wind.avg10minutes = `${Number(Number($(listTd[77]).text().trim().split(' ')[0]) * Number(0.539957)).toFixed(1)}`;
+      jsonData.wind.raff = `${Number(Number($(listTd[54]).text().trim().split(' ')[0]) * Number(0.539957)).toFixed(1)}`;
       jsonData.wind.raff_hour = $(listTd[56]).text();
 
       await axios({
@@ -74,9 +74,9 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
             .trim();
           jsonData.pressure.current = chr(listCard[3]).children('div').eq(1).text()
             .trim();
-          jsonData.wind.speed = chr(listCard[4]).children('div').eq(1).text()
-            .split('-')[0]
-            .trim();
+          jsonData.wind.speed = `${Number(Number(chr(listCard[4]).children('div').eq(1).text()
+            .split('-')[0].split('\n')[2]
+            .trim()) * Number(0.539957)).toFixed(1)}`;
           jsonData.wind.direction = chr(listCard[4]).children('div').eq(1).text()
             .split('-')[1]
             .trim();

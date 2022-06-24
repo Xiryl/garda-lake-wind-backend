@@ -34,15 +34,57 @@ const route = async (fastify) => {
       .send({ status: true, message: 'up' });
   });
 
+  fastify.get('/all', async (request, reply) => {
+    logger.debug(`[${process.pid}][${request.id}] Invoking all`);
+
+    try {
+      const all = [];
+      let jsonData = await dataRdg.elaborate();
+      jsonData.location = 'R.d.G.';
+      console.log('rdg');
+      all.push(jsonData);
+      jsonData = await dataCvt.elaborate();
+      jsonData.location = 'C.V.T.';
+      console.log('cvt');
+      all.push(jsonData);
+      jsonData = await dataNavene.elaborate();
+      jsonData.location = 'NAVENE';
+      console.log('navene');
+      all.push(jsonData);
+      jsonData = await dataLimone.elaborate();
+      jsonData.jsonData.location = 'LIMONE';
+      console.log('limone');
+      all.push(jsonData.jsonData);
+      jsonData = await dataCampione.elaborate();
+      console.log('campione');
+      jsonData.jsonData.location = 'CAMPIONE';
+      all.push(jsonData.jsonData);
+      jsonData = await dataTorri.elaborate();
+      console.log('torri');
+      jsonData.location = 'TORRI';
+      all.push(jsonData);
+      reply
+        .code(200)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send({ status: true, data: all });
+    } catch (ex) {
+      console.log(ex);
+      reply
+        .code(500)
+        .header('Content-Type', 'application/json; charset=utf-8')
+        .send({ status: false });
+    }
+  });
+
   fastify.get('/limone', async (request, reply) => {
     logger.debug(`[${process.pid}][${request.id}] Invoking limone`);
 
     try {
-      const jsonData = await dataLimone.elaborate();
+      const dat = await dataLimone.elaborate();
       reply
         .code(200)
         .header('Content-Type', 'application/json; charset=utf-8')
-        .send({ status: true, data: jsonData });
+        .send({ status: true, data: dat });
     } catch (ex) {
       console.log(ex);
       reply

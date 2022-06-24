@@ -2,7 +2,7 @@ const dataNavene = require('./lib/naveneParser');
 const dataLimone = require('./lib/limoneParser');
 const dataCvt = require('./lib/cvtParser');
 const dataRdg = require('./lib/rdgParser');
-const dataCampione = require('./lib/campioneParser');
+const dataCampione = require('./src/lib/campioneParser');
 const dataTorri = require('./lib/torriParser');
 
 const populateAllDataset = async () => {

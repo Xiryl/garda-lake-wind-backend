@@ -14,6 +14,7 @@ const swaggerConfig = require('./config/swagger');
 fastify.http2 = process.env.API_HTTP2_SUPPORT;
 fastify.register(require('fastify-swagger'), swaggerConfig.options);
 
+fastify.register(require('fastify-cors'), { origin: '*' });
 // =============================================================================
 // FASTIFY LOAD
 // =============================================================================

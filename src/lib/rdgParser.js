@@ -63,10 +63,10 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
       jsonData.ur_internal.max = '';
       jsonData.ur_internal.max_hour = '';
 
-      jsonData.wind.speed = `${data.wspeed} km/h`;
+      jsonData.wind.speed = `${Number(Number(data.wspeed) * Number(0.539957)).toFixed(1)}`;
       jsonData.wind.direction = data.wdir;
       jsonData.wind.avg10minutes = '';
-      jsonData.wind.raff = `${data.wgust} km/h`;
+      jsonData.wind.raff = `${Number(Number(data.wgust) * Number(0.539957)).toFixed(1)}`;
       jsonData.wind.raff_hour = '';
 
       jsonData.rain.intensity_day = `${data.rfall} mm`;

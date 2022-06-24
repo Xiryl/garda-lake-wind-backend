@@ -57,6 +57,7 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
       jsonData.wind.raff = `${Number(Number($(listTd[29]).text().trim().split(' ')[0]) * Number(0.539957)).toFixed(1)}`;
       jsonData.wind.raff_hour = $(listTd[31]).text();
 
+      jsonData.wind.direction = $(listTd[22]).text().split(' ')[0];
       jsonData.rain.intensity_day = $(listTd[37]).text().split(' ')[0];
 
       resolve({ jsonData });

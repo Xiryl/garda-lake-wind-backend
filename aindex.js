@@ -1,9 +1,4 @@
-const dataNavene = require('./lib/naveneParser');
-const dataLimone = require('./lib/limoneParser');
-const dataCvt = require('./lib/cvtParser');
-const dataRdg = require('./lib/rdgParser');
-const dataCampione = require('./src/lib/campioneParser');
-const dataTorri = require('./lib/torriParser');
+const dataMalcesine = require('./src/lib/malcesineParser');
 
 const populateAllDataset = async () => {
 //   const jsonNavene = await dataNavene.elaborate();
@@ -18,6 +13,9 @@ const populateAllDataset = async () => {
 //   console.log(jsonCampione);
 //   const jsonTorri = await dataTorri.elaborate();
 //   console.log(jsonTorri);
+
+  const jsonTorri = await dataMalcesine.elaborate();
+  console.log(jsonTorri);
 };
 
 populateAllDataset();

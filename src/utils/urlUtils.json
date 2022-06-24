@@ -1,5 +1,6 @@
 {
     "URL_DATA_NAVENE": "https://www.meteoproject.it/ftp/stazioni/malcesine/dati.php",
+    "URL_DATA_MALCESINE": "http://www.meteosystem.com/wlip/malcesine/mobile.php",
     "URL_DATA_LIMONE": "http://www.centrometeolombardo.com/Moduli/stazioni.php?limone_garda",
     "URL_DATA_TORBOLE": "http://www.meteosystem.com/stazioni/garda/attualet.php",
     "URL_DATA_CVT": "https://www.meteosystem.com/wlip/torbole/tabella2.php",

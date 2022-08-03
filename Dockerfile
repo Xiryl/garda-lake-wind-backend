@@ -10,6 +10,6 @@ RUN rm -rf node_modules && npm cache clean --force && npm install --production
 COPY . /app
 
 # expose 3000 server port
-EXPOSE 3000
+EXPOSE 3099
 
 CMD [ "npm", "run", "start" ]

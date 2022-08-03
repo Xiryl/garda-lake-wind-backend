@@ -56,9 +56,9 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
 
       jsonData.wind.speed = '';
       jsonData.wind.direction = '';
-      jsonData.wind.avg10minutes = `${Number(Number(chr(listSpan[21]).text().trim().split('\n')[0]) * Number(1.852)).toFixed(1)}`;
+      jsonData.wind.avg10minutes = `${Number(Number(chr(listSpan[21]).text().trim().split('\n')[0]) / Number(1.852)).toFixed(1)}`;
 
-      jsonData.wind.raff = `${Number(Number(chr(listSpan[20]).text().trim().split('\n')[0]) * Number(1.852)).toFixed(1)}`;
+      jsonData.wind.raff = `${Number(Number(chr(listSpan[20]).text().trim().split('\n')[0]) / Number(1.852)).toFixed(1)}`;
       jsonData.wind.raff_hour = chr(listSpan[22]).text().trim();
 
       jsonData.temperature.current = chr(listCard[0]).children('div').eq(1).text()
@@ -74,7 +74,7 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
         .trim()
         .replace(',', '.');
       jsonData.wind.speed = `${Number(Number(chr(listCard[4]).children('div').eq(1).text()
-        .split('-')[0].trim().split('\n')[0].replace(',', '.')) * Number(1.852)).toFixed(1)}`;
+        .split('-')[0].trim().split('\n')[0].replace(',', '.')) / Number(1.852)).toFixed(1)}`;
 
       jsonData.wind.direction = chr(listCard[4]).children('div').eq(1).text()
         .split('-')[1]

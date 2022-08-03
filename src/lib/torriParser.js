@@ -65,10 +65,10 @@ const getDataFromUrl = (url) => new Promise(async (resolve, reject) => {
       jsonData.ur_internal.max = '';
       jsonData.ur_internal.max_hour = '';
 
-      jsonData.wind.speed = `${Number(Number($(listTd[58]).text().replace(',', '.')) * Number(1.852)).toFixed(1)}`;
+      jsonData.wind.speed = `${Number(Number($(listTd[58]).text().replace(',', '.')) / Number(1.852)).toFixed(1)}`;
       jsonData.wind.direction = $(listTd[65]).text().replace(',', '.').split(' ')[1];
       jsonData.wind.avg10minutes = '';
-      jsonData.wind.raff = `${Number(Number($(listTd[59]).text().replace(',', '.')) * Number(1.852)).toFixed(1)}`;
+      jsonData.wind.raff = `${Number(Number($(listTd[59]).text().replace(',', '.')) / Number(1.852)).toFixed(1)}`;
       jsonData.wind.raff_hour = $(listTd[60]).text().replace(',', '.');
 
       jsonData.rain.intensity_day = $(listTd[73]).text().replace(',', '.');

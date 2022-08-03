@@ -40,12 +40,10 @@ const route = async (fastify) => {
     try {
       const all = [];
       let jsonData = await dataRdg.elaborate();
-      jsonData.location = 'R.d.G.';
-      console.log('rdg');
+      jsonData.location = 'VARONE';
       all.push(jsonData);
       jsonData = await dataCvt.elaborate();
       jsonData.location = 'C.V.T.';
-      console.log('cvt');
       all.push(jsonData);
       jsonData = await dataNavene.elaborate();
       jsonData.location = 'NAVENE';

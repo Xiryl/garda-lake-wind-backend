@@ -1,4 +1,4 @@
-const dataMalcesine = require('./src/lib/malcesineParser');
+const dataMalcesine = require('./src/lib/torriParser');
 
 const populateAllDataset = async () => {
 //   const jsonNavene = await dataNavene.elaborate();
